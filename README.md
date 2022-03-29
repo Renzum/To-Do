@@ -14,26 +14,35 @@ Simply execute the script without any arguments.
 ### Adding an item to the To-Do list
 Execute the script with the ```add``` argument followed by the job you wish to be added.
 
-Example:
-```shell
-#Add the job "Clean my home directory." to the To-Do list
-To-Do.py add Clean my home directory
-```
-
-###Removing an item from the To-Do list
+### Removing an item from the To-Do list
 Execute the script with the ```remove``` argument followed by the index of the job
 
-Example
+### Examples:
+Call the ```To-Do.py``` with arguments ```add [job]``` to add a new item to the To-Do list.
 ```shell
-#Print my To-Do list
+To-Do.py add Clean my home directory
+```
+```shell
+#Output
+TODO: added Clean my home directory
+```
+
+Call the ```To-Do.py``` to print the list of current To-Do's
+```shell
 To-Do.py
+```
+```shell
+#Output
+[1] Clean my home directory
+[2] Do some squats
+[3] Call mom
+```
 
->[1] Clean my home directory
->[2] Do some squats
->[3] Call mom
-
-#Remove do some squats from the To-Do list
+Call the ```To-Do.py``` with arguments ```remove [index]``` to remove a certain item from the to do list
+```shell
 To-Do.py remove 2
-
->TODO: removed Do some squats
+```
+```shell
+#Output
+TODO: removed Do some squats
 ```
