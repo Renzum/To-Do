@@ -3,6 +3,14 @@
 from sys import argv
 from os import environ
 
+"""
+--A simple To-Do list program for use in the Shell--
+
+Author: Karen Arzumanyan
+Repository: https://www.github.com/Renzum/To-Do
+Version: 1.0
+"""
+
 to_do_list = []
 
 #Read the todo list from the user data file
@@ -86,6 +94,8 @@ def print_help():
     print("add: Add a job to the todo list")
     print("remove: Remove a job at a given index from the todo list")
     print("help: Print this help message")
+    print("No arguments: Print the todo list")
+    print("The todo list is saved in the home directory of the user as .todo")
 
 def main(arguments):
     data_file = environ['HOME'] + '/.todo'
