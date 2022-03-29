@@ -35,5 +35,5 @@ To-Do.py
 #Remove do some squats from the To-Do list
 To-Do.py remove 2
 
->TODO: remove todo number 2
+>TODO: removed Do some squats
 ```
