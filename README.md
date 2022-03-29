@@ -1,17 +1,17 @@
 # To-Do
 A simple python program that provides an interactable To-Do list in the shell.
 
-##Installation
+## Installation
 Simply put the .py file into a directroy you wish. You can put it in a directory that is in your PATH to allow for quick execution.
 
-##Storage
+## Storage
 The file with the todo items is being stored in your home directory as a ```.todo``` file.
 A more optimal solution is being looked into. Possible json storage is underway for further functionality support such as deadlines.
 
-##Instruction
-###Getting the list of the To-Do items
+## Instruction
+### Getting the list of the To-Do items
 Simply execute the script without any arguments.
-###Adding an item to the To-Do list
+### Adding an item to the To-Do list
 Execute the script with the ```add``` argument followed by the job you wish to be added.
 
 Example:
