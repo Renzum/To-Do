@@ -83,7 +83,10 @@ def remove_todo(index):
     print("TODO: remove todo number" . index)
 
 def print_help():
-    pass
+    print("Usage: todo [add|remove|help] [job]")
+    print("add: Add a job to the todo list")
+    print("remove: Remove a job at a given index from the todo list")
+    print("help: Print this help message")
 
 def main(arguments):
     data_file = environ['HOME'] + '/.todo'
