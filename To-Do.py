@@ -41,9 +41,10 @@ def print_todo_list():
     if len(to_do_list) == 0:
         print("No To-Do's! Job well done!")
     else:
+        print("Your To-Do list:")
         try:
             for index, job in enumerate(to_do_list):
-                print("[{}] {}".format(index, job))
+                print("[{}] {}".format(index + 1, job))
         except IndexError:
             print("Index out of range")
             exit(1)
@@ -73,7 +74,11 @@ def remove_todo(index):
         print("Index must be an integer")
         exit(1)
 
-    to_do_list.pop(index)
+    try:
+        to_do_list.pop(index - 1)
+    except IndexError:
+        print("Index out of range")
+        exit(1)
 
     print("TODO: remove todo number" . index)
 
@@ -81,7 +86,7 @@ def print_help():
     pass
 
 def main(arguments):
-    data_file = environ['HOME'] + '/todo.txt'
+    data_file = environ['HOME'] + '/.todo'
     #Read the todo list from the user data file
     read_to_do_file(data_file)
     if len(arguments) == 0:
@@ -89,9 +94,20 @@ def main(arguments):
         exit(0)
     else:
         if arguments[0] == "add":
-            add_todo(arguments[1:])
+            #Verify that the user has provided at least one arguments
+            if len(arguments) == 1:
+                print("No job specified")
+                exit(1)
+            else:
+                #Add the job to the todo list
+                add_todo(arguments[1:])
         elif arguments[0] == "remove":
-            remove_todo(arguments[1])
+            #Verify that the user has provided the index of the job to remove
+            if len(arguments) == 2:
+                print("No index specified")
+                remove_todo(arguments[1])
+            else:
+                print("Usage: todo remove [index]")
         elif arguments[0] == "help":
             print_help()
         else:
