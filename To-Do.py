@@ -75,12 +75,12 @@ def remove_todo(index):
         exit(1)
 
     try:
-        to_do_list.pop(index - 1)
+        item = to_do_list.pop(index - 1)
     except IndexError:
         print("Index out of range")
         exit(1)
 
-    print("TODO: remove todo number" . index)
+    print(f"TODO: removed {item}")
 
 def print_help():
     print("Usage: todo [add|remove|help] [job]")
@@ -106,11 +106,12 @@ def main(arguments):
                 add_todo(arguments[1:])
         elif arguments[0] == "remove":
             #Verify that the user has provided the index of the job to remove
-            if len(arguments) == 2:
+            if len(arguments) == 1:
                 print("No index specified")
-                remove_todo(arguments[1])
+                exit(1)
             else:
-                print("Usage: todo remove [index]")
+                #Remove the job at the given index
+                remove_todo(arguments[1])
         elif arguments[0] == "help":
             print_help()
         else:
